@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>STW</title>
+    <style>
+        img {
+            position: absolute;
+        }
+        #rs {
+            left: 700px;
+            border-left: 2px solid black;
+        }
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+      
+
+    </style>
+</head>
+<body id = "body">
+    <h1>Save the War</h1>
+    <p>Select the traitor on the left....</p>
+    <div id="ls"></div>
+
+    <div id="rs"></div>
+    <script>
+    var score = 0;
+    var fcs = 4;
+    var lss = document.getElementById("ls");
+    var rss = document.getElementById("rs");
+    var bdy = document.getElementById("body");
+    function game() {
+      score++;
+      while(lss.lastChild){
+        lss.removeChild(lss.lastChild);
+      }
+      while(rss.lastChild){
+        rss.removeChild(rss.lastChild);
+      }
+
+        for (i = 0; i < fcs; i++) {
+            im = document.createElement("img");
+            im.src = "mag.png";
+            im.alt = "O";
+
+
+            var l = Math.floor(Math.random() * 400);
+            var t = Math.floor(Math.random() * 400);
+
+
+            im.style.top = t + "px";
+            im.style.left = l + "px";
+            lss.appendChild(im);
+
+            var clone = ls.lastChild.cloneNode();
+            rss.appendChild(clone);
+
+
+        }
+
+        rss.removeChild(rss.lastChild);
+        lss.lastChild.onclick = function nxt(event){
+            event.stopPropagation();
+            fcs += 4;
+            game();
+        }
+
+
+
+    }
+  game();
+  score--;
+  body.onclick = function go(){
+    alert("GAME OVER!!" + "\nYour Score is :  "+ score);
+    body.onclick = null;
+    lss.lastChild.onclick = null;
+  }
+
+</script>
+</body>
+</html>
