@@ -1,4 +1,4 @@
----------------------------------------------------------------A website of restaurant Baratie------------------------------------
+--------------------A website of restaurant Baratie-----------------------
 
 Baratie is a restaurant in the anime/manga One Piece.
 
